@@ -1,0 +1,361 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { FileText, Clock, Shield, Users, CheckCircle, ArrowRight, Star, Building2 } from "lucide-react";
+import carteGriseImage from "@assets/c49addd6-5fa2-4f8b-b9d3-adc75283d153_1765222615195.webp";
+
+export default function Landing() {
+  return (
+    <div className="min-h-screen">
+      <section className="relative py-16 md:py-20 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background z-0" />
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-6 text-center lg:text-left">
+              <div className="flex items-center gap-4 justify-center lg:justify-start text-sm text-muted-foreground">
+                <span className="flex items-center gap-1.5">
+                  <Building2 className="h-4 w-4" />
+                  Habilitation Ministère de l'Intérieur
+                </span>
+                <span className="flex items-center gap-1.5 text-green-600">
+                  <CheckCircle className="h-4 w-4" />
+                  98% de satisfaction client
+                </span>
+              </div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
+                Faites votre <span className="text-primary">carte grise</span> en quelques clics
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
+                Plateforme d'immatriculation depuis 2022. Nous avons reçu une habilitation de l'État pour vous proposer un service d'immatriculation simplifié en ligne.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                <Button size="lg" variant="outline" asChild className="gap-2 min-w-[180px]" data-testid="button-cta-particulier">
+                  <a href="/demarches">
+                    Voir les démarches
+                  </a>
+                </Button>
+                <Button size="lg" asChild className="gap-2 min-w-[200px]" data-testid="button-cta-commander">
+                  <a href="/demarches">
+                    Commander carte grise
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Les professionnels bénéficient de <span className="text-primary font-semibold">-35%</span> sur les frais de service
+              </p>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl transform rotate-3" />
+                <img 
+                  src={carteGriseImage} 
+                  alt="Certificat d'immatriculation - Carte grise française" 
+                  className="relative rounded-2xl shadow-2xl max-w-md w-full object-cover"
+                  data-testid="img-carte-grise-hero"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pourquoi nous - 2ème section */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-3xl font-semibold text-center mb-12">
+            Pourquoi choisir AutoDossiers ?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="hover-elevate">
+              <CardHeader>
+                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <Clock className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">Rapide et efficace</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Soumettez vos documents en quelques minutes et suivez leur progression en temps réel.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate">
+              <CardHeader>
+                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <Shield className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">100% sécurisé</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Vos données et documents sont protégés avec les plus hauts standards de sécurité.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate">
+              <CardHeader>
+                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <FileText className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">Suivi transparent</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Visualisez l'état de toutes vos démarches depuis votre tableau de bord personnalisé.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="hover-elevate">
+              <CardHeader>
+                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-primary" />
+                </div>
+                <CardTitle className="text-xl">Tarifs professionnels</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Bénéficiez de tarifs avantageux pour les garages et concessionnaires.
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Avis - 3ème section */}
+      <section className="py-16 px-4">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-3xl font-semibold text-center mb-12">
+            Ils nous font confiance
+          </h2>
+
+          {/* Statistics */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="text-center space-y-2">
+              <div className="text-4xl md:text-5xl font-bold text-primary">12 500+</div>
+              <p className="text-muted-foreground">Démarches traitées avec succès</p>
+            </div>
+            <div className="text-center space-y-2">
+              <div className="text-4xl md:text-5xl font-bold text-primary">9.8/10</div>
+              <p className="text-muted-foreground">Taux de satisfaction client</p>
+            </div>
+            <div className="text-center space-y-2">
+              <div className="text-4xl md:text-5xl font-bold text-primary">2+ ans</div>
+              <p className="text-muted-foreground">D'expertise SIV accrédité</p>
+            </div>
+          </div>
+
+          {/* Testimonials */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            {/* Short reviews - 3 columns on larger screens */}
+            <div className="lg:col-span-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {[
+                  {
+                    name: "Maria",
+                    role: "Particulier",
+                    text: "Accueil au top, avec un service efficace. Je recommande fortement !",
+                    rating: 5,
+                  },
+                  {
+                    name: "Jean P.",
+                    role: "Garage",
+                    text: "Traitement ultra-rapide. Équipe réactive et professionnelle !",
+                    rating: 5,
+                  },
+                  {
+                    name: "Sophie D.",
+                    role: "Particulier",
+                    text: "Parfait ! Démarche complète en 2 jours. Merci !",
+                    rating: 5,
+                  },
+                ].map((testimonial, idx) => (
+                  <Card key={idx} className="hover-elevate">
+                    <CardHeader>
+                      <div className="flex items-center justify-between mb-2">
+                        <div>
+                          <CardTitle className="text-base">{testimonial.name}</CardTitle>
+                          <CardDescription className="text-xs">{testimonial.role}</CardDescription>
+                        </div>
+                      </div>
+                      <div className="flex gap-1">
+                        {Array.from({ length: testimonial.rating }).map((_, i) => (
+                          <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                        ))}
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground italic text-sm">"{testimonial.text}"</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Long reviews - 2 columns */}
+            {[
+              {
+                name: "CLAUDIA NEGRIT",
+                role: "Particulier",
+                text: "Service rapide et personnels très accueillants. Je vous remercie pour votre rapidité et votre efficacité. L'équipe AutoDossiers est vraiment à l'écoute de vos préoccupations. Nickel !",
+                rating: 5,
+              },
+              {
+                name: "Cororton Pauline",
+                role: "Garage Pauline Auto",
+                text: "Très professionnel, j'ai fait ma carte grise chez eux et elle a été faite super rapidement grâce aux personnels. Je vous remercie beaucoup ! Nous travaillons en partenariat depuis 18 mois et c'est un vrai gain de temps pour nos clients.",
+                rating: 5,
+              },
+            ].map((testimonial, idx) => (
+              <Card key={idx} className="hover-elevate">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <CardTitle className="text-lg">{testimonial.name}</CardTitle>
+                      <CardDescription>{testimonial.role}</CardDescription>
+                    </div>
+                  </div>
+                  <div className="flex gap-1">
+                    {Array.from({ length: testimonial.rating }).map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                    ))}
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground italic">"{testimonial.text}"</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Google My Business Section */}
+          <div className="mt-16 pt-8 border-t">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-semibold mb-2">Retrouvez-nous sur Google</h3>
+              <p className="text-muted-foreground">Lisez les avis de nos clients sur Google My Business</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button size="lg" variant="outline" asChild className="gap-2" data-testid="button-google-reviews">
+                <a href="https://www.google.com/maps/place/Carte+grise+immatriculation+auto+moto+et+permis+de+conduire+Saint-%C3%89tienne/@45.4447975,4.3975567,17z/data=!3m1!4b1!4m6!3m5!1s0x47f5abff252f3833:0xb5bfce17dc34d256!8m2!3d45.4447975!4d4.3975567!16s%2Fg%2F11gy19hlmk?authuser=0&hl=es&entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm0 21.6c-5.3 0-9.6-4.3-9.6-9.6S6.7 2.4 12 2.4s9.6 4.3 9.6 9.6-4.3 9.6-9.6 9.6z"/>
+                  </svg>
+                  Voir nos avis Google
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild className="gap-2" data-testid="button-leave-review">
+                <a href="https://www.google.com/maps/place/Carte+grise+immatriculation+auto+moto+et+permis+de+conduire+Saint-%C3%89tienne/@45.4447975,4.3975567,17z/data=!3m1!4b1!4m6!3m5!1s0x47f5abff252f3833:0xb5bfce17dc34d256!8m2!3d45.4447975!4d4.3975567!16s%2Fg%2F11gy19hlmk?authuser=0&hl=es&entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                  Laisser un avis
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tarifs - 4ème (avant CTA final) */}
+      <section id="pricing" className="py-16 px-4">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-3xl font-semibold text-center mb-4">
+            Tarifs transparents
+          </h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Des prix clairs et compétitifs sans frais cachés.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="relative overflow-hidden border-primary h-full flex flex-col">
+              <CardHeader className="text-center pb-8">
+                <CardTitle className="text-2xl">Particuliers</CardTitle>
+                <div className="mt-4">
+                  <span className="text-muted-foreground text-sm">À partir de</span>
+                  <div>
+                    <span className="text-4xl font-semibold">14.90€</span>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="flex flex-col flex-1">
+                <ul className="space-y-3 flex-1">
+                  {[
+                    "Soumission illimitée de documents",
+                    "Suivi en temps réel",
+                    "Support par email",
+                    "Paiement sécurisé",
+                    "Facture automatique",
+                  ].map((feature) => (
+                    <li key={feature} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button className="w-full mt-6" asChild data-testid="button-individual-cta">
+                  <a href="/api/login?userType=individual">S'inscrire en tant que particulier</a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="relative overflow-hidden border-primary h-full flex flex-col">
+              <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-bl-lg">
+                Jusqu'à -25%
+              </div>
+              <CardHeader className="text-center pb-8">
+                <CardTitle className="text-2xl">Professionnels</CardTitle>
+                <p className="text-sm text-muted-foreground mt-2">Garages, concessionnaires & loueurs</p>
+                <div className="mt-4">
+                  <span className="text-4xl font-semibold">Jusqu'à -25%</span>
+                </div>
+              </CardHeader>
+              <CardContent className="flex flex-col flex-1">
+                <ul className="space-y-3 flex-1">
+                  {[
+                    "Tous les avantages Particuliers",
+                    "Tarifs préférentiels (-30%)",
+                    "Gestion multi-véhicules",
+                    "Support prioritaire",
+                    "Espace dédié pour les professionnels",
+                  ].map((feature) => (
+                    <li key={feature} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button className="w-full mt-6" asChild data-testid="button-professional-cta">
+                  <a href="/api/login?userType=professional">S'inscrire en tant que pro</a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 bg-primary/5">
+        <div className="mx-auto max-w-4xl text-center space-y-6">
+          <h2 className="text-3xl font-semibold">
+            Prêt à simplifier vos démarches ?
+          </h2>
+          <p className="text-xl text-muted-foreground">
+            Rejoignez des centaines de particuliers et professionnels qui nous font confiance.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild className="gap-2" data-testid="button-footer-particulier">
+              <a href="/api/login?userType=individual">
+                Particulier
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="gap-2" data-testid="button-footer-pro">
+              <a href="/api/login?userType=professional">
+                Professionnel (jusqu'à -25%)
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

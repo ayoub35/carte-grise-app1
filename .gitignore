@@ -1,0 +1,26 @@
+node_modules
+dist
+.DS_Store
+server/public
+vite.config.ts.*
+*.tar.gz
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode
+.idea
+
+# OS
+Thumbs.db
+
+# Logs
+*.log
+
+# Replit leftovers
+.replit
+.config
+.local
+attached_assets
