@@ -87,6 +87,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Setup session-based authentication
   await setupAuth(app);
 
+  // Healthcheck endpoint for Railway
+  app.get("/api/health", (_req, res) => {
+    res.status(200).json({ status: "ok" });
+  });
+
   // ===== Custom Email/Password Authentication Routes =====
 
   // Register Professional
