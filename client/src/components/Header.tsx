@@ -206,7 +206,7 @@ export function Header() {
                       </div>
                     </>
                   )}
-                  
+
                   <div className="pb-4 border-b">
                     <p className="font-semibold mb-3 text-foreground">Navigation</p>
                     {publicNavLinks.map((link) => (
@@ -329,8 +329,8 @@ export function Header() {
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
-                    <Link 
-                      href={sessionUser?.userType === 'professional' ? '/espace-pro' : '/espace-particulier'} 
+                    <Link
+                      href={sessionUser?.userType === 'professional' ? '/espace-pro' : '/espace-particulier'}
                       className="flex items-center gap-2 cursor-pointer"
                       data-testid="link-mon-espace"
                     >
@@ -339,7 +339,7 @@ export function Header() {
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem 
+                  <DropdownMenuItem
                     onClick={() => logoutMutation.mutate()}
                     className="flex items-center gap-2 cursor-pointer"
                     data-testid="button-logout"
@@ -351,7 +351,7 @@ export function Header() {
               </DropdownMenu>
             )}
 
-            {/* Desktop User Menu pour utilisateurs Replit Auth */}
+            {/* Desktop User Menu */}
             {isAuthenticated && !isSessionAuthenticated && (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>

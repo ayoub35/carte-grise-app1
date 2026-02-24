@@ -105,7 +105,7 @@ export default function Privacy() {
             </CardHeader>
             <CardContent className="text-sm space-y-4">
               <p>
-                Les données peuvent être transférées vers des serveurs situés en dehors de l'UE (notamment via Stripe et Replit). 
+                Les données peuvent être transférées vers des serveurs situés en dehors de l'UE (notamment via Stripe).
                 Ces transferts sont effectués conformément aux dispositions du RGPD.
               </p>
             </CardContent>

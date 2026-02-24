@@ -72,9 +72,6 @@ export default function Footer() {
             <p>
               © {new Date().getFullYear()} AutoDossiers. Tous droits réservés.
             </p>
-            <p>
-              Hébergé par <a href="https://replit.com" className="text-primary hover:underline" target="_blank" rel="noreferrer">Replit</a>
-            </p>
           </div>
         </div>
       </div>

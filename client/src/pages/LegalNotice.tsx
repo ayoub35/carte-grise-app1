@@ -62,17 +62,13 @@ export default function LegalNotice() {
             <CardContent className="space-y-4 text-sm">
               <div>
                 <p className="font-semibold">Nom de l'hébergeur :</p>
-                <p>Replit, Inc.</p>
-              </div>
-              <div>
-                <p className="font-semibold">Adresse :</p>
-                <p>203 Redwood Shores Parkway, Redwood City, CA 94065, USA</p>
+                <p>Railway Corp.</p>
               </div>
               <div>
                 <p className="font-semibold">Site web :</p>
                 <p>
-                  <a href="https://replit.com" className="text-primary hover:underline" target="_blank" rel="noreferrer">
-                    www.replit.com
+                  <a href="https://railway.app" className="text-primary hover:underline" target="_blank" rel="noreferrer">
+                    www.railway.app
                   </a>
                 </p>
               </div>
@@ -85,8 +81,8 @@ export default function LegalNotice() {
             </CardHeader>
             <CardContent className="text-sm space-y-4">
               <p>
-                L'ensemble du contenu du site AutoDossiers (textes, images, logos, graphismes, etc.) est protégé par les droits d'auteur et 
-                les droits de propriété intellectuelle. Toute reproduction, représentation, modification, publication, adaptation ou transmission 
+                L'ensemble du contenu du site AutoDossiers (textes, images, logos, graphismes, etc.) est protégé par les droits d'auteur et
+                les droits de propriété intellectuelle. Toute reproduction, représentation, modification, publication, adaptation ou transmission
                 de tout ou partie du site est strictement interdite sans l'autorisation préalable écrite de AutoDossiers.
               </p>
             </CardContent>
@@ -98,8 +94,8 @@ export default function LegalNotice() {
             </CardHeader>
             <CardContent className="text-sm space-y-4">
               <p>
-                AutoDossiers s'efforce de maintenir à jour les informations présentées sur son site. Cependant, aucune garantie n'est donnée 
-                quant à l'exactitude, l'exhaustivité ou la pertinence de ces informations. AutoDossiers ne peut être tenue responsable des 
+                AutoDossiers s'efforce de maintenir à jour les informations présentées sur son site. Cependant, aucune garantie n'est donnée
+                quant à l'exactitude, l'exhaustivité ou la pertinence de ces informations. AutoDossiers ne peut être tenue responsable des
                 dommages directs ou indirects résultant de l'utilisation du site.
               </p>
               <p>
