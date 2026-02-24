@@ -87,7 +87,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div className="flex flex-col min-h-screen bg-background">
+        <div className="fixed top-0 left-0 w-full z-[100] bg-[#F59E0B] text-black text-center text-sm font-semibold py-2 px-4 shadow-md">
+          🔒 DEMO MODE — Portfolio demonstration only. No real documents are processed or stored.
+        </div>
+        <div className="flex flex-col min-h-screen bg-background pt-10">
           <Header />
           <main className="flex-1">
             <Router />
