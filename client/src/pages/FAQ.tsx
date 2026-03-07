@@ -25,18 +25,18 @@ export default function FAQ() {
   const categories = Array.from(new Set(faqs?.map(f => f.category) || []));
 
   return (
-    <div className="min-h-screen py-8 px-4">
-      <div className="mx-auto max-w-4xl space-y-8">
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-semibold tracking-tight">
-            Foire aux questions
+    <div className="min-h-screen py-12 px-4 bg-gradient-to-b from-background to-muted/30">
+      <div className="mx-auto max-w-4xl space-y-10">
+        <div className="text-center space-y-4 animate-fade-in-up">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Foire aux <span className="gradient-text">questions</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Trouvez rapidement des réponses à vos questions
           </p>
         </div>
 
-        <Card>
+        <Card className="animate-fade-in-up delay-100">
           <CardHeader>
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -109,7 +109,7 @@ export default function FAQ() {
           </CardContent>
         </Card>
 
-        <Card className="bg-primary/5 border-primary/20">
+        <Card className="card-premium bg-primary/5 border-primary/20 animate-fade-in-up delay-200">
           <CardHeader>
             <CardTitle>Vous ne trouvez pas votre réponse ?</CardTitle>
             <CardDescription>

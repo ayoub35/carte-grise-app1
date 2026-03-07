@@ -1,56 +1,73 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, Clock, Shield, Users, CheckCircle, ArrowRight, Star, Building2 } from "lucide-react";
+import { FileText, Clock, Shield, Users, CheckCircle, ArrowRight, Star, Building2, Zap, HeadphonesIcon } from "lucide-react";
 import carteGriseImage from "@assets/c49addd6-5fa2-4f8b-b9d3-adc75283d153_1765222615195.webp";
 
 export default function Landing() {
   return (
     <div className="min-h-screen">
-      <section className="relative py-16 md:py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background z-0" />
+      {/* ═══ HERO SECTION ═══ */}
+      <section className="relative py-20 md:py-28 px-4 overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-background to-primary/3 z-0" />
+        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary/3 rounded-full blur-3xl animate-float delay-700" />
+
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-6 text-center lg:text-left">
-              <div className="flex items-center gap-4 justify-center lg:justify-start text-sm text-muted-foreground">
-                <span className="flex items-center gap-1.5">
-                  <Building2 className="h-4 w-4" />
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="space-y-8 text-center lg:text-left">
+              {/* Trust badges */}
+              <div className="flex items-center gap-4 justify-center lg:justify-start animate-fade-in-up">
+                <span className="flex items-center gap-1.5 text-sm text-muted-foreground bg-card/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border/50 shadow-sm">
+                  <Building2 className="h-4 w-4 text-primary" />
                   Habilitation Ministère de l'Intérieur
                 </span>
-                <span className="flex items-center gap-1.5 text-green-600">
+                <span className="flex items-center gap-1.5 text-sm text-emerald-600 bg-emerald-50 dark:bg-emerald-950/30 px-3 py-1.5 rounded-full border border-emerald-200 dark:border-emerald-800 shadow-sm">
                   <CheckCircle className="h-4 w-4" />
-                  98% de satisfaction client
+                  98% satisfaction
                 </span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
-                Faites votre <span className="text-primary">carte grise</span> en quelques clics
+
+              {/* Hero title with gradient */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight animate-fade-in-up delay-100">
+                Faites votre{" "}
+                <span className="gradient-text">carte grise</span>
+                {" "}en quelques clics
               </h1>
-              <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
-                Plateforme d'immatriculation depuis 2022. Nous avons reçu une habilitation de l'État pour vous proposer un service d'immatriculation simplifié en ligne.
+
+              <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 animate-fade-in-up delay-200">
+                Plateforme d'immatriculation depuis 2022. Service habilité par l'État pour simplifier vos démarches en ligne.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-                <Button size="lg" variant="outline" asChild className="gap-2 min-w-[180px]" data-testid="button-cta-particulier">
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center animate-fade-in-up delay-300">
+                <Button size="lg" variant="outline" asChild className="gap-2 min-w-[180px] group transition-all duration-300 hover:shadow-md" data-testid="button-cta-particulier">
                   <a href="/demarches">
                     Voir les démarches
                   </a>
                 </Button>
-                <Button size="lg" asChild className="gap-2 min-w-[200px]" data-testid="button-cta-commander">
+                <Button size="lg" asChild className="gap-2 min-w-[200px] btn-gradient" data-testid="button-cta-commander">
                   <a href="/demarches">
                     Commander carte grise
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </a>
                 </Button>
               </div>
-              <p className="text-sm text-muted-foreground">
+
+              <p className="text-sm text-muted-foreground animate-fade-in-up delay-400">
                 Les professionnels bénéficient de <span className="text-primary font-semibold">-35%</span> sur les frais de service
               </p>
             </div>
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl transform rotate-3" />
-                <img 
-                  src={carteGriseImage} 
-                  alt="Certificat d'immatriculation - Carte grise française" 
-                  className="relative rounded-2xl shadow-2xl max-w-md w-full object-cover"
+
+            {/* Hero image */}
+            <div className="flex justify-center lg:justify-end animate-fade-in-up delay-300">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-br from-primary/30 to-primary/10 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500 opacity-60 group-hover:opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl transform rotate-3 transition-transform duration-500 group-hover:rotate-1" />
+                <img
+                  src={carteGriseImage}
+                  alt="Certificat d'immatriculation - Carte grise française"
+                  className="relative rounded-2xl shadow-2xl max-w-md w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   data-testid="img-carte-grise-hero"
                 />
               </div>
@@ -59,98 +76,94 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Pourquoi nous - 2ème section */}
-      <section className="py-16 px-4 bg-muted/30">
+      {/* ═══ SEPARATOR ═══ */}
+      <div className="section-gradient-border" />
+
+      {/* ═══ WHY CHOOSE US ═══ */}
+      <section className="py-20 px-4 bg-muted/30">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl font-semibold text-center mb-12">
-            Pourquoi choisir AutoDossiers ?
-          </h2>
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Pourquoi choisir <span className="gradient-text">AutoDossiers</span> ?
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Une plateforme complète pour vos démarches d'immatriculation
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover-elevate">
-              <CardHeader>
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Clock className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">Rapide et efficace</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Soumettez vos documents en quelques minutes et suivez leur progression en temps réel.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="hover-elevate">
-              <CardHeader>
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">100% sécurisé</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Vos données et documents sont protégés avec les plus hauts standards de sécurité.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="hover-elevate">
-              <CardHeader>
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <FileText className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">Suivi transparent</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Visualisez l'état de toutes vos démarches depuis votre tableau de bord personnalisé.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="hover-elevate">
-              <CardHeader>
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">Tarifs professionnels</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Bénéficiez de tarifs avantageux pour les garages et concessionnaires.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            {[
+              {
+                icon: Zap,
+                title: "Rapide et efficace",
+                description: "Soumettez vos documents en quelques minutes et suivez leur progression en temps réel.",
+                delay: "delay-100",
+              },
+              {
+                icon: Shield,
+                title: "100% sécurisé",
+                description: "Vos données et documents sont protégés avec les plus hauts standards de sécurité.",
+                delay: "delay-200",
+              },
+              {
+                icon: FileText,
+                title: "Suivi transparent",
+                description: "Visualisez l'état de toutes vos démarches depuis votre tableau de bord personnalisé.",
+                delay: "delay-300",
+              },
+              {
+                icon: Users,
+                title: "Tarifs professionnels",
+                description: "Bénéficiez de tarifs avantageux pour les garages et concessionnaires.",
+                delay: "delay-400",
+              },
+            ].map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <Card key={idx} className={`card-premium border-transparent bg-card/80 backdrop-blur-sm animate-fade-in-up ${item.delay}`}>
+                  <CardHeader>
+                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
+                      <Icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl">{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base leading-relaxed">
+                      {item.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Avis - 3ème section */}
-      <section className="py-16 px-4">
+      {/* ═══ SEPARATOR ═══ */}
+      <div className="section-gradient-border" />
+
+      {/* ═══ SOCIAL PROOF ═══ */}
+      <section className="py-20 px-4">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl font-semibold text-center mb-12">
-            Ils nous font confiance
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 animate-fade-in-up">
+            Ils nous font <span className="gradient-text">confiance</span>
           </h2>
 
-          {/* Statistics */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="text-center space-y-2">
-              <div className="text-4xl md:text-5xl font-bold text-primary">12 500+</div>
-              <p className="text-muted-foreground">Démarches traitées avec succès</p>
-            </div>
-            <div className="text-center space-y-2">
-              <div className="text-4xl md:text-5xl font-bold text-primary">9.8/10</div>
-              <p className="text-muted-foreground">Taux de satisfaction client</p>
-            </div>
-            <div className="text-center space-y-2">
-              <div className="text-4xl md:text-5xl font-bold text-primary">2+ ans</div>
-              <p className="text-muted-foreground">D'expertise SIV accrédité</p>
-            </div>
+          {/* Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            {[
+              { value: "12 500+", label: "Démarches traitées avec succès" },
+              { value: "9.8/10", label: "Taux de satisfaction client" },
+              { value: "2+ ans", label: "D'expertise SIV accrédité" },
+            ].map((stat, idx) => (
+              <div key={idx} className={`text-center space-y-3 animate-fade-in-up delay-${(idx + 1) * 100}`}>
+                <div className="text-5xl md:text-6xl font-bold gradient-text tracking-tight">{stat.value}</div>
+                <p className="text-muted-foreground text-lg">{stat.label}</p>
+              </div>
+            ))}
           </div>
 
           {/* Testimonials */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
-            {/* Short reviews - 3 columns on larger screens */}
             <div className="lg:col-span-2">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
@@ -173,7 +186,7 @@ export default function Landing() {
                     rating: 5,
                   },
                 ].map((testimonial, idx) => (
-                  <Card key={idx} className="hover-elevate">
+                  <Card key={idx} className={`card-premium animate-fade-in-up delay-${(idx + 1) * 100}`}>
                     <CardHeader>
                       <div className="flex items-center justify-between mb-2">
                         <div>
@@ -181,21 +194,21 @@ export default function Landing() {
                           <CardDescription className="text-xs">{testimonial.role}</CardDescription>
                         </div>
                       </div>
-                      <div className="flex gap-1">
+                      <div className="flex gap-0.5">
                         {Array.from({ length: testimonial.rating }).map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                          <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
                         ))}
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground italic text-sm">"{testimonial.text}"</p>
+                      <p className="text-muted-foreground italic text-sm leading-relaxed">"{testimonial.text}"</p>
                     </CardContent>
                   </Card>
                 ))}
               </div>
             </div>
 
-            {/* Long reviews - 2 columns */}
+            {/* Long reviews */}
             {[
               {
                 name: "CLAUDIA NEGRIT",
@@ -210,7 +223,7 @@ export default function Landing() {
                 rating: 5,
               },
             ].map((testimonial, idx) => (
-              <Card key={idx} className="hover-elevate">
+              <Card key={idx} className={`card-premium animate-fade-in-up delay-${(idx + 4) * 100}`}>
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <div>
@@ -218,35 +231,36 @@ export default function Landing() {
                       <CardDescription>{testimonial.role}</CardDescription>
                     </div>
                   </div>
-                  <div className="flex gap-1">
+                  <div className="flex gap-0.5">
                     {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                      <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground italic">"{testimonial.text}"</p>
+                  <p className="text-muted-foreground italic leading-relaxed">"{testimonial.text}"</p>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {/* Google My Business Section */}
-          <div className="mt-16 pt-8 border-t">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-semibold mb-2">Retrouvez-nous sur Google</h3>
+          {/* Google My Business */}
+          <div className="mt-16 pt-8">
+            <div className="section-gradient-border mb-8" />
+            <div className="text-center mb-8 animate-fade-in-up">
+              <h3 className="text-2xl font-bold mb-2">Retrouvez-nous sur Google</h3>
               <p className="text-muted-foreground">Lisez les avis de nos clients sur Google My Business</p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" variant="outline" asChild className="gap-2" data-testid="button-google-reviews">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-100">
+              <Button size="lg" variant="outline" asChild className="gap-2 transition-all duration-300 hover:shadow-md" data-testid="button-google-reviews">
                 <a href="https://www.google.com/maps/place/Carte+grise+immatriculation+auto+moto+et+permis+de+conduire+Saint-%C3%89tienne/@45.4447975,4.3975567,17z/data=!3m1!4b1!4m6!3m5!1s0x47f5abff252f3833:0xb5bfce17dc34d256!8m2!3d45.4447975!4d4.3975567!16s%2Fg%2F11gy19hlmk?authuser=0&hl=es&entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm0 21.6c-5.3 0-9.6-4.3-9.6-9.6S6.7 2.4 12 2.4s9.6 4.3 9.6 9.6-4.3 9.6-9.6 9.6z"/>
+                    <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm0 21.6c-5.3 0-9.6-4.3-9.6-9.6S6.7 2.4 12 2.4s9.6 4.3 9.6 9.6-4.3 9.6-9.6 9.6z" />
                   </svg>
                   Voir nos avis Google
                 </a>
               </Button>
-              <Button size="lg" variant="outline" asChild className="gap-2" data-testid="button-leave-review">
+              <Button size="lg" variant="outline" asChild className="gap-2 transition-all duration-300 hover:shadow-md" data-testid="button-leave-review">
                 <a href="https://www.google.com/maps/place/Carte+grise+immatriculation+auto+moto+et+permis+de+conduire+Saint-%C3%89tienne/@45.4447975,4.3975567,17z/data=!3m1!4b1!4m6!3m5!1s0x47f5abff252f3833:0xb5bfce17dc34d256!8m2!3d45.4447975!4d4.3975567!16s%2Fg%2F11gy19hlmk?authuser=0&hl=es&entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
                   Laisser un avis
                 </a>
@@ -256,23 +270,30 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Tarifs - 4ème (avant CTA final) */}
-      <section id="pricing" className="py-16 px-4">
+      {/* ═══ SEPARATOR ═══ */}
+      <div className="section-gradient-border" />
+
+      {/* ═══ PRICING PREVIEW ═══ */}
+      <section id="pricing" className="py-20 px-4">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl font-semibold text-center mb-4">
-            Tarifs transparents
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Des prix clairs et compétitifs sans frais cachés.
-          </p>
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Tarifs <span className="gradient-text">transparents</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Des prix clairs et compétitifs sans frais cachés.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="relative overflow-hidden border-primary h-full flex flex-col">
+            {/* Particuliers */}
+            <Card className="card-premium relative overflow-hidden border-primary/30 h-full flex flex-col animate-fade-in-up delay-100">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 via-primary to-primary/50" />
               <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl">Particuliers</CardTitle>
                 <div className="mt-4">
                   <span className="text-muted-foreground text-sm">À partir de</span>
                   <div>
-                    <span className="text-4xl font-semibold">14.90€</span>
+                    <span className="text-5xl font-bold gradient-text">14.90€</span>
                   </div>
                 </div>
               </CardHeader>
@@ -286,26 +307,28 @@ export default function Landing() {
                     "Facture automatique",
                   ].map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full mt-6" asChild data-testid="button-individual-cta">
-                  <a href="/api/login?userType=individual">S'inscrire en tant que particulier</a>
+                <Button className="w-full mt-6 btn-gradient" asChild data-testid="button-individual-cta">
+                  <a href="/register">S'inscrire en tant que particulier</a>
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="relative overflow-hidden border-primary h-full flex flex-col">
-              <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-bl-lg">
+            {/* Professionnels */}
+            <Card className="card-premium relative overflow-hidden border-primary/30 h-full flex flex-col animate-fade-in-up delay-200">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400" />
+              <div className="absolute top-3 right-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
                 Jusqu'à -25%
               </div>
               <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl">Professionnels</CardTitle>
                 <p className="text-sm text-muted-foreground mt-2">Garages, concessionnaires & loueurs</p>
                 <div className="mt-4">
-                  <span className="text-4xl font-semibold">Jusqu'à -25%</span>
+                  <span className="text-5xl font-bold gradient-text">-25%</span>
                 </div>
               </CardHeader>
               <CardContent className="flex flex-col flex-1">
@@ -318,13 +341,13 @@ export default function Landing() {
                     "Espace dédié pour les professionnels",
                   ].map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full mt-6" asChild data-testid="button-professional-cta">
-                  <a href="/api/login?userType=professional">S'inscrire en tant que pro</a>
+                <Button className="w-full mt-6 btn-gradient" asChild data-testid="button-professional-cta">
+                  <a href="/register-pro">S'inscrire en tant que pro</a>
                 </Button>
               </CardContent>
             </Card>
@@ -332,23 +355,30 @@ export default function Landing() {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-primary/5">
-        <div className="mx-auto max-w-4xl text-center space-y-6">
-          <h2 className="text-3xl font-semibold">
-            Prêt à simplifier vos démarches ?
+      {/* ═══ SEPARATOR ═══ */}
+      <div className="section-gradient-border" />
+
+      {/* ═══ FINAL CTA ═══ */}
+      <section className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-primary/4 to-background z-0" />
+        <div className="absolute top-10 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl" />
+        <div className="relative z-10 mx-auto max-w-4xl text-center space-y-8">
+          <h2 className="text-3xl md:text-4xl font-bold animate-fade-in-up">
+            Prêt à simplifier vos <span className="gradient-text">démarches</span> ?
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-muted-foreground animate-fade-in-up delay-100">
             Rejoignez des centaines de particuliers et professionnels qui nous font confiance.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild className="gap-2" data-testid="button-footer-particulier">
-              <a href="/api/login?userType=individual">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-200">
+            <Button size="lg" asChild className="gap-2 btn-gradient" data-testid="button-footer-particulier">
+              <a href="/register">
                 Particulier
                 <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild className="gap-2" data-testid="button-footer-pro">
-              <a href="/api/login?userType=professional">
+            <Button size="lg" variant="outline" asChild className="gap-2 transition-all duration-300 hover:shadow-md" data-testid="button-footer-pro">
+              <a href="/register-pro">
                 Professionnel (jusqu'à -25%)
                 <ArrowRight className="h-4 w-4" />
               </a>

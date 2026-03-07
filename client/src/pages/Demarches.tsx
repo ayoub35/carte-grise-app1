@@ -1,8 +1,7 @@
 import { useLocation } from "wouter";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { DOCUMENT_TYPES } from "@/data/documentTypes";
-import { FileText, Users, MoreHorizontal, type LucideIcon } from "lucide-react";
+import { FileText, Users, MoreHorizontal, ArrowRight, type LucideIcon } from "lucide-react";
 
 const categoryIcons: Record<string, LucideIcon> = {
   popular: FileText,
@@ -29,34 +28,37 @@ export default function Demarches() {
     setLocation(`/demarche/${demarcheId}`);
   };
 
-  const CategorySection = ({ category, label, icon: Icon, demarches }: { 
-    category: string; 
-    label: string; 
+  const CategorySection = ({ category, label, icon: Icon, demarches }: {
+    category: string;
+    label: string;
     icon: LucideIcon;
     demarches: typeof DOCUMENT_TYPES;
   }) => (
-    <div className="space-y-4">
-      <div className="flex items-center gap-2">
-        <Icon className="h-5 w-5 text-primary" />
-        <h2 className="text-xl font-semibold">{label} ({demarches.length})</h2>
+    <div className="space-y-6 animate-fade-in-up">
+      <div className="flex items-center gap-3">
+        <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center">
+          <Icon className="h-5 w-5 text-primary" />
+        </div>
+        <h2 className="text-2xl font-bold">{label} <span className="text-muted-foreground font-normal text-lg">({demarches.length})</span></h2>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {demarches.map((demarche) => (
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {demarches.map((demarche, idx) => (
           <button
             key={demarche.id}
             onClick={() => handleSelectDemarche(demarche.id)}
-            className="group"
+            className="group text-left"
             data-testid={`button-demarche-${demarche.id}`}
           >
-            <Card className="h-full hover-elevate cursor-pointer transition-all">
-              <CardContent className="p-4">
+            <Card className={`h-full card-premium border-transparent bg-card/80 backdrop-blur-sm cursor-pointer animate-fade-in-up delay-${Math.min((idx + 1) * 100, 400)}`}>
+              <CardContent className="p-5">
                 <div className="space-y-2">
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-medium text-sm leading-snug text-left group-hover:text-primary transition-colors">
+                    <h3 className="font-semibold text-sm leading-snug group-hover:text-primary transition-colors duration-300">
                       {demarche.name}
                     </h3>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 mt-0.5" />
                   </div>
-                  <p className="text-xs text-muted-foreground text-left">{demarche.description}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{demarche.description}</p>
                 </div>
               </CardContent>
             </Card>
@@ -67,15 +69,18 @@ export default function Demarches() {
   );
 
   return (
-    <div className="min-h-screen py-8 px-4 bg-gradient-to-b from-background to-muted/30">
-      <div className="mx-auto max-w-6xl space-y-12">
+    <div className="min-h-screen py-12 px-4 bg-gradient-to-b from-background to-muted/30">
+      <div className="mx-auto max-w-6xl space-y-14">
         {/* Header */}
-        <div className="space-y-2">
-          <h1 className="text-4xl font-semibold tracking-tight">Toutes les démarches</h1>
-          <p className="text-lg text-muted-foreground">Sélectionnez une démarche pour voir les détails et commencer</p>
+        <div className="space-y-4 animate-fade-in-up">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Toutes les <span className="gradient-text">démarches</span>
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl">
+            Sélectionnez une démarche pour voir les détails et commencer votre procédure en ligne
+          </p>
         </div>
 
-        {/* Popular Category */}
         <CategorySection
           category="popular"
           label={categoryLabels.popular}
@@ -83,7 +88,6 @@ export default function Demarches() {
           demarches={grouped.popular}
         />
 
-        {/* Professional Category */}
         <CategorySection
           category="professional"
           label={categoryLabels.professional}
@@ -91,12 +95,11 @@ export default function Demarches() {
           demarches={grouped.professional}
         />
 
-        {/* Other Category */}
         <CategorySection
           category="other"
           label={categoryLabels.other}
           icon={categoryIcons.other}
-          demarches={grouped.other}   
+          demarches={grouped.other}
         />
       </div>
     </div>

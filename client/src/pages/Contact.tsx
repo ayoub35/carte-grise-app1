@@ -57,18 +57,18 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen py-8 px-4">
-      <div className="mx-auto max-w-4xl space-y-8">
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-semibold tracking-tight">
-            Nous contacter
+    <div className="min-h-screen py-12 px-4 bg-gradient-to-b from-background to-muted/30">
+      <div className="mx-auto max-w-4xl space-y-10">
+        <div className="text-center space-y-4 animate-fade-in-up">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Nous <span className="gradient-text">contacter</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Une question ? Une suggestion ? Notre équipe est là pour vous aider
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in-up delay-100">
           <Card>
             <CardHeader>
               <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
@@ -106,7 +106,7 @@ export default function Contact() {
           </Card>
         </div>
 
-        <Card>
+        <Card className="card-premium animate-fade-in-up delay-200">
           <CardHeader>
             <CardTitle>Envoyez-nous un message</CardTitle>
             <CardDescription>

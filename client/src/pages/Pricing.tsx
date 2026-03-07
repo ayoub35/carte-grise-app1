@@ -134,9 +134,8 @@ export default function Pricing() {
   const PricingRow = ({ item, index }: { item: PricingItem; index: number }) => (
     <div
       key={item.id || index}
-      className={`flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 p-4 rounded-md ${
-        index % 2 === 0 ? 'bg-muted/70' : 'bg-transparent'
-      }`}
+      className={`flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 p-4 rounded-md ${index % 2 === 0 ? 'bg-muted/70' : 'bg-transparent'
+        }`}
       data-testid={`pricing-row-${item.id}`}
     >
       <div className="flex-1 min-w-0">
@@ -166,17 +165,17 @@ export default function Pricing() {
   );
 
   return (
-    <div className="min-h-screen py-12 px-4">
-      <div className="mx-auto max-w-5xl space-y-8">
-        <div className="text-center space-y-2">
-          <h1 className="text-4xl font-semibold tracking-tight">Nos tarifs</h1>
-          <p className="text-muted-foreground">
+    <div className="min-h-screen py-12 px-4 bg-gradient-to-b from-background to-muted/30">
+      <div className="mx-auto max-w-5xl space-y-10">
+        <div className="text-center space-y-3 animate-fade-in-up">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Nos <span className="gradient-text">tarifs</span></h1>
+          <p className="text-muted-foreground text-lg">
             Tarifs TTC. Réductions automatiques pour les professionnels.
           </p>
         </div>
 
         {/* Calculator Section */}
-        <Card className="border-primary/30">
+        <Card className="card-premium border-primary/30 animate-fade-in-up delay-100">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Calculator className="h-5 w-5 text-primary" />
@@ -271,8 +270,8 @@ export default function Pricing() {
                   />
                 </div>
 
-                <Button 
-                  onClick={calculatePrice} 
+                <Button
+                  onClick={calculatePrice}
                   className="w-full gap-2"
                   data-testid="button-calculate"
                 >
@@ -327,7 +326,7 @@ export default function Pricing() {
           </CardContent>
         </Card>
 
-        <Card className="max-w-5xl mx-auto">
+        <Card className="card-premium max-w-5xl mx-auto animate-fade-in-up delay-200">
           <CardHeader>
             <CardTitle className="text-lg">Grille tarifaire - Frais de service</CardTitle>
           </CardHeader>
@@ -388,7 +387,7 @@ export default function Pricing() {
           </CardContent>
         </Card>
 
-        <Card className="max-w-7xl mx-auto bg-primary/5 border-primary/20">
+        <Card className="card-premium max-w-7xl mx-auto bg-primary/5 border-primary/20 animate-fade-in-up delay-300">
           <CardHeader>
             <CardTitle className="text-primary">Information importante</CardTitle>
           </CardHeader>

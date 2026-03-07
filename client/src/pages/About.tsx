@@ -7,9 +7,11 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/30">
       {/* Hero Section */}
-      <div className="py-16 px-4 bg-gradient-to-r from-primary/10 to-primary/5">
-        <div className="mx-auto max-w-6xl">
-          <h1 className="text-5xl font-bold tracking-tight mb-4">À propos de AutoDossiers</h1>
+      <div className="py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-background to-primary/3" />
+        <div className="absolute top-10 right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+        <div className="relative mx-auto max-w-6xl animate-fade-in-up">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">À propos de <span className="gradient-text">AutoDossiers</span></h1>
           <p className="text-xl text-muted-foreground max-w-3xl">
             Plus de 35 ans d'expertise dans l'automobile. Un service habilité et agréé par le Ministère de l'Intérieur.
           </p>
@@ -22,26 +24,26 @@ export default function About() {
           <div>
             <h2 className="text-3xl font-semibold mb-2">Notre expertise</h2>
             <p className="text-muted-foreground text-lg">
-              AutoDossiers est le résultat de plus de 35 années d'expérience dans le secteur automobile. 
+              AutoDossiers est le résultat de plus de 35 années d'expérience dans le secteur automobile.
               Depuis 2015, nous nous spécialisons dans l'immatriculation de véhicules avec plus de 9 ans d'expertise dédiée.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            <Card>
+            <Card className="card-premium animate-fade-in-up delay-100">
               <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-primary mb-2">35+</div>
+                <div className="text-5xl font-bold gradient-text mb-2">35+</div>
                 <p className="text-muted-foreground">Ans d'expérience dans l'automobile</p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="card-premium animate-fade-in-up delay-200">
               <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-primary mb-2">9+</div>
+                <div className="text-5xl font-bold gradient-text mb-2">9+</div>
                 <p className="text-muted-foreground">Ans d'expertise en immatriculation</p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="card-premium animate-fade-in-up delay-300">
               <CardContent className="pt-6">
-                <div className="text-4xl font-bold text-primary mb-2">+15K</div>
+                <div className="text-5xl font-bold gradient-text mb-2">+15K</div>
                 <p className="text-muted-foreground">Démarches réussies</p>
               </CardContent>
             </Card>
@@ -104,7 +106,7 @@ export default function About() {
                 <div className="p-6">
                   <h3 className="font-semibold text-lg mb-2">Saint-Étienne</h3>
                   <p className="text-sm text-muted-foreground">
-                    Notre siège social situé à Saint-Étienne, Loire. 
+                    Notre siège social situé à Saint-Étienne, Loire.
                     Consultations sur rendez-vous pour vos démarches d'immatriculation.
                   </p>
                 </div>
@@ -116,7 +118,7 @@ export default function About() {
                 <div className="p-6">
                   <h3 className="font-semibold text-lg mb-2">Partenaires locaux</h3>
                   <p className="text-sm text-muted-foreground">
-                    Réseau de garages partenaires pour l'inspection et les contrôles techniques 
+                    Réseau de garages partenaires pour l'inspection et les contrôles techniques
                     nécessaires à vos démarches.
                   </p>
                 </div>
@@ -132,7 +134,7 @@ export default function About() {
             <h2 className="text-3xl font-semibold">Notre équipe</h2>
           </div>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            Une équipe de professionnels de l'automobile dédiée à simplifier vos démarches d'immatriculation. 
+            Une équipe de professionnels de l'automobile dédiée à simplifier vos démarches d'immatriculation.
             Disponibles pour répondre à vos questions et vous guider tout au long de votre démarche.
           </p>
           <div className="grid md:grid-cols-2 gap-4">
@@ -176,18 +178,21 @@ export default function About() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg p-12 text-center space-y-4">
-          <h2 className="text-3xl font-semibold">Prêt à simplifier votre démarche ?</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Consultez notre sélection de démarches ou contactez-nous pour toute question.
-          </p>
-          <div className="flex gap-4 justify-center pt-4">
-            <a href="/demarches" className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors" data-testid="button-view-demarches">
-              Voir les démarches
-            </a>
-            <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/5 transition-colors" data-testid="button-contact">
-              Nous contacter
-            </a>
+        <section className="relative overflow-hidden rounded-2xl p-12 text-center space-y-6 animate-fade-in-up">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-background" />
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold">Prêt à simplifier votre <span className="gradient-text">démarche</span> ?</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
+              Consultez notre sélection de démarches ou contactez-nous pour toute question.
+            </p>
+            <div className="flex gap-4 justify-center pt-6">
+              <a href="/demarches" className="btn-gradient inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold" data-testid="button-view-demarches">
+                Voir les démarches
+              </a>
+              <a href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-primary/30 text-primary rounded-lg font-semibold hover:bg-primary/5 transition-all duration-300 hover:shadow-md" data-testid="button-contact">
+                Nous contacter
+              </a>
+            </div>
           </div>
         </section>
       </div>
