@@ -374,13 +374,9 @@
   }
 
   /* ── Clean Text Accent ── */
-  .gradient-text {
-    @apply text-primary font-bold;
-  }
+  
 
-  .dark .gradient-text {
-    @apply text-primary font-bold;
-  }
+  .dark 
 
   /* ── Premium Card ── */
   .card-premium {

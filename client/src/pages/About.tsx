@@ -11,7 +11,7 @@ export default function About() {
         <div className="absolute inset-0 bg-background" />
         <div className="absolute top-10 right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
         <div className="relative mx-auto max-w-6xl animate-fade-in-up">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">À propos de <span className="gradient-text">AutoDossiers</span></h1>
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">À propos de <span className="text-primary font-bold">AutoDossiers</span></h1>
           <p className="text-xl text-muted-foreground max-w-3xl">
             Plus de 35 ans d'expertise dans l'automobile. Un service habilité et agréé par le Ministère de l'Intérieur.
           </p>
@@ -31,19 +31,19 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="card-premium animate-fade-in-up delay-100">
               <CardContent className="pt-6">
-                <div className="text-5xl font-bold gradient-text mb-2">35+</div>
+                <div className="text-5xl font-bold text-primary font-bold mb-2">35+</div>
                 <p className="text-muted-foreground">Ans d'expérience dans l'automobile</p>
               </CardContent>
             </Card>
             <Card className="card-premium animate-fade-in-up delay-200">
               <CardContent className="pt-6">
-                <div className="text-5xl font-bold gradient-text mb-2">9+</div>
+                <div className="text-5xl font-bold text-primary font-bold mb-2">9+</div>
                 <p className="text-muted-foreground">Ans d'expertise en immatriculation</p>
               </CardContent>
             </Card>
             <Card className="card-premium animate-fade-in-up delay-300">
               <CardContent className="pt-6">
-                <div className="text-5xl font-bold gradient-text mb-2">+15K</div>
+                <div className="text-5xl font-bold text-primary font-bold mb-2">+15K</div>
                 <p className="text-muted-foreground">Démarches réussies</p>
               </CardContent>
             </Card>
@@ -181,7 +181,7 @@ export default function About() {
         <section className="relative overflow-hidden rounded-2xl p-12 text-center space-y-6 animate-fade-in-up">
           <div className="absolute inset-0 bg-background" />
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold">Prêt à simplifier votre <span className="gradient-text">démarche</span> ?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Prêt à simplifier votre <span className="text-primary font-bold">démarche</span> ?</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
               Consultez notre sélection de démarches ou contactez-nous pour toute question.
             </p>

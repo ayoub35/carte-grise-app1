@@ -74,7 +74,7 @@ export default function Demarches() {
         {/* Header */}
         <div className="space-y-4 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Toutes les <span className="gradient-text">démarches</span>
+            Toutes les <span className="text-primary font-bold">démarches</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
             Sélectionnez une démarche pour voir les détails et commencer votre procédure en ligne

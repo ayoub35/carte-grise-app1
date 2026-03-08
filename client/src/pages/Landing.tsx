@@ -27,7 +27,7 @@ export default function Landing() {
               {/* Hero title with gradient */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight animate-fade-in-up delay-100">
                 Faites votre{" "}
-                <span className="gradient-text">carte grise</span>
+                <span className="text-primary font-bold">carte grise</span>
                 {" "}en quelques clics
               </h1>
 
@@ -83,7 +83,7 @@ export default function Landing() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Pourquoi choisir <span className="gradient-text">AutoDossiers</span> ?
+              Pourquoi choisir <span className="text-primary font-bold">AutoDossiers</span> ?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Une plateforme complète pour vos démarches d'immatriculation
@@ -144,7 +144,7 @@ export default function Landing() {
       <section className="py-20 px-4">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 animate-fade-in-up">
-            Ils nous font <span className="gradient-text">confiance</span>
+            Ils nous font <span className="text-primary font-bold">confiance</span>
           </h2>
 
           {/* Stats */}
@@ -155,7 +155,7 @@ export default function Landing() {
               { value: "2+ ans", label: "D'expertise SIV accrédité" },
             ].map((stat, idx) => (
               <div key={idx} className={`text-center space-y-3 animate-fade-in-up delay-${(idx + 1) * 100}`}>
-                <div className="text-5xl md:text-6xl font-bold gradient-text tracking-tight">{stat.value}</div>
+                <div className="text-5xl md:text-6xl font-bold text-primary font-bold tracking-tight">{stat.value}</div>
                 <p className="text-muted-foreground text-lg">{stat.label}</p>
               </div>
             ))}
@@ -277,7 +277,7 @@ export default function Landing() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Tarifs <span className="gradient-text">transparents</span>
+              Tarifs <span className="text-primary font-bold">transparents</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Des prix clairs et compétitifs sans frais cachés.
@@ -361,7 +361,7 @@ export default function Landing() {
       <section className="py-20 px-4 relative overflow-hidden bg-muted/20">
         <div className="relative z-10 mx-auto max-w-4xl text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold animate-fade-in-up">
-            Prêt à simplifier vos <span className="gradient-text">démarches</span> ?
+            Prêt à simplifier vos <span className="text-primary font-bold">démarches</span> ?
           </h2>
           <p className="text-xl text-muted-foreground animate-fade-in-up delay-100">
             Rejoignez des centaines de particuliers et professionnels qui nous font confiance.

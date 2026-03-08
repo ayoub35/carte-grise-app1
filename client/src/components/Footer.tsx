@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           <div className="space-y-4">
-            <h3 className="font-bold text-xl gradient-text">AutoDossiers</h3>
+            <h3 className="font-bold text-xl text-primary font-bold">AutoDossiers</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Service de gestion administrative pour vos démarches de carte grise en ligne. Habilité par le Ministère de l'Intérieur.
             </p>

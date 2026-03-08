@@ -61,7 +61,7 @@ export default function Contact() {
       <div className="mx-auto max-w-4xl space-y-10">
         <div className="text-center space-y-4 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Nous <span className="gradient-text">contacter</span>
+            Nous <span className="text-primary font-bold">contacter</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Une question ? Une suggestion ? Notre équipe est là pour vous aider
