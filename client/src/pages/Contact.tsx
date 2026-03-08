@@ -57,7 +57,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen py-12 px-4 bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen py-12 px-4 bg-background">
       <div className="mx-auto max-w-4xl space-y-10">
         <div className="text-center space-y-4 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">

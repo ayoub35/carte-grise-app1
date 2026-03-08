@@ -69,7 +69,7 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen py-8 px-4 bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen py-8 px-4 bg-background">
       <div className="mx-auto max-w-7xl space-y-8">
         <div>
           <h1 className="text-3xl font-semibold">Tableau de bord Admin</h1>

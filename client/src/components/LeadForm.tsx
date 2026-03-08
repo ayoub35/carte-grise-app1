@@ -63,7 +63,7 @@ export default function LeadForm({ demarcheId, demarcheName }: LeadFormProps) {
   };
 
   return (
-    <Card className="border-primary/50 bg-gradient-to-br from-primary/5 to-primary/2">
+    <Card className="border-primary/50 bg-muted">
       <CardHeader className="pb-3">
         <CardTitle className="text-lg">Commencer en 30 secondes</CardTitle>
         <CardDescription className="text-xs">Pas d'inscription requise</CardDescription>

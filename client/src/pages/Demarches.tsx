@@ -36,7 +36,7 @@ export default function Demarches() {
   }) => (
     <div className="space-y-6 animate-fade-in-up">
       <div className="flex items-center gap-3">
-        <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center">
+        <div className="h-10 w-10 rounded-xl bg-muted flex items-center justify-center">
           <Icon className="h-5 w-5 text-primary" />
         </div>
         <h2 className="text-2xl font-bold">{label} <span className="text-muted-foreground font-normal text-lg">({demarches.length})</span></h2>
@@ -69,7 +69,7 @@ export default function Demarches() {
   );
 
   return (
-    <div className="min-h-screen py-12 px-4 bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen py-12 px-4 bg-background">
       <div className="mx-auto max-w-6xl space-y-14">
         {/* Header */}
         <div className="space-y-4 animate-fade-in-up">

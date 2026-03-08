@@ -45,7 +45,7 @@ export default function DemarchePage() {
   };
 
   return (
-    <div className="min-h-screen py-8 px-4 bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen py-8 px-4 bg-background">
       {/* Mobile CTA Button */}
       <div className="md:hidden fixed top-16 left-0 right-0 z-40 bg-background border-b px-4 py-3">
         <Button size="lg" onClick={handleStartDemarche} className="w-full gap-2" data-testid="button-mobile-demarche-cta">

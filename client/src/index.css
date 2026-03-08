@@ -270,6 +270,15 @@
   }
 }
 
+@keyframes spin-y {
+  from {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════
    PREMIUM UTILITY CLASSES
    ═══════════════════════════════════════════════════════════════ */
@@ -320,6 +329,11 @@
     animation: glow-pulse 2s ease-in-out infinite;
   }
 
+  .animate-spin-y {
+    animation: spin-y 15s linear infinite;
+    transform-style: preserve-3d;
+  }
+
   .animate-shimmer {
     background: linear-gradient(
       90deg,
@@ -359,19 +373,13 @@
     border: 1px solid hsl(var(--border) / 0.3);
   }
 
-  /* ── Gradient Text ── */
+  /* ── Clean Text Accent ── */
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.7), hsl(38 92% 50%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @apply text-primary font-bold;
   }
 
   .dark .gradient-text {
-    background: linear-gradient(135deg, hsl(217 91% 70%), hsl(217 91% 60%), hsl(38 92% 60%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @apply text-primary font-bold;
   }
 
   /* ── Premium Card ── */
@@ -394,7 +402,7 @@
     border-radius: inherit;
     opacity: 0;
     transition: opacity 0.3s ease;
-    background: linear-gradient(135deg, hsl(var(--primary) / 0.04), transparent);
+    background: rgba(255, 255, 255, 0.03);
     pointer-events: none;
   }
 
@@ -424,42 +432,18 @@
     left: 0;
   }
 
-  /* ── Gradient Button ── */
+  /* ── Clean Button ── */
   .btn-gradient {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(217 91% 50%));
-    color: hsl(var(--primary-foreground));
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    @apply bg-primary text-primary-foreground shadow-sm transition-all duration-300;
   }
 
   .btn-gradient:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 16px -4px hsl(var(--primary) / 0.4);
+    @apply bg-primary/90 shadow-md transform -translate-y-px;
   }
 
-  .btn-gradient::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,0.15),
-      transparent
-    );
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-  }
-
-  .btn-gradient:hover::before {
-    transform: translateX(100%);
-  }
-
-  /* ── Section Divider ── */
+  /* ── Clean Section Divider ── */
   .section-gradient-border {
-    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
-    height: 1px;
+    @apply bg-border h-px w-full;
   }
 
   /* ── Elevate system ── */

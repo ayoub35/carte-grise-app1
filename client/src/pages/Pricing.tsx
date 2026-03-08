@@ -165,7 +165,7 @@ export default function Pricing() {
   );
 
   return (
-    <div className="min-h-screen py-12 px-4 bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen py-12 px-4 bg-background">
       <div className="mx-auto max-w-5xl space-y-10">
         <div className="text-center space-y-3 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Nos <span className="gradient-text">tarifs</span></h1>

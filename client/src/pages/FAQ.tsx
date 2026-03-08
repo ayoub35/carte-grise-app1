@@ -9,27 +9,77 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import type { Faq } from "@shared/schema";
 
+const staticFaqs: Faq[] = [
+  {
+    id: "static-1",
+    question: "Quels sont les documents nécessaires pour faire une carte grise ?",
+    answer: "Pour faire votre carte grise, vous aurez généralement besoin d'une pièce d'identité en cours de validité, d'un justificatif de domicile de moins de 6 mois, de la demande de certificat d'immatriculation (Cerfa 13750) et du certificat de cession ou ancienne carte grise barrée.",
+    category: "Documents",
+    order: 1,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: "static-2",
+    question: "Combien de temps faut-il pour recevoir la carte grise ?",
+    answer: "Une fois votre dossier complet et validé, vous recevrez un Certificat Provisoire d'Immatriculation (CPI) vous permettant de rouler pendant 1 mois. La carte grise définitive est envoyée par l'Imprimerie Nationale sous 3 à 5 jours ouvrés.",
+    category: "Délais",
+    order: 2,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: "static-3",
+    question: "Combien coûte une carte grise ?",
+    answer: "Le coût dépend de plusieurs facteurs : la puissance fiscale du véhicule, la région de votre domicile, l'âge du véhicule, et son taux d'émission de CO2. Vous pouvez utiliser notre simulateur en ligne pour obtenir le tarif exact.",
+    category: "Tarifs",
+    order: 3,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: "static-4",
+    question: "Est-il possible de payer en plusieurs fois ?",
+    answer: "Oui, notre plateforme propose des solutions de paiement sécurisé pour faciliter le règlement de vos démarches et frais de taxes.",
+    category: "Paiement",
+    order: 4,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: "static-5",
+    question: "Que faire si j'ai perdu ma carte grise ?",
+    answer: "En cas de perte, il faut effectuer une demande de duplicata. Vous devrez remplir une déclaration de perte (Cerfa 13753) puis nous soumettre votre dossier.",
+    category: "Démarches",
+    order: 5,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  }
+];
+
 export default function FAQ() {
   const [search, setSearch] = useState("");
   const { data: faqs, isLoading } = useQuery<Faq[]>({
     queryKey: ["/api/faqs"],
   });
 
-  const filteredFaqs = faqs?.filter(faq =>
+  const allFaqs = [...staticFaqs, ...(faqs || [])];
+
+  const filteredFaqs = allFaqs.filter(faq =>
     search === "" ||
     faq.question.toLowerCase().includes(search.toLowerCase()) ||
     faq.answer.toLowerCase().includes(search.toLowerCase()) ||
     faq.category.toLowerCase().includes(search.toLowerCase())
-  ) || [];
+  );
 
-  const categories = Array.from(new Set(faqs?.map(f => f.category) || []));
+  const categories = Array.from(new Set(allFaqs.map(f => f.category)));
 
   return (
-    <div className="min-h-screen py-12 px-4 bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen py-12 px-4 bg-background">
       <div className="mx-auto max-w-4xl space-y-10">
         <div className="text-center space-y-4 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Foire aux <span className="gradient-text">questions</span>
+            Foire aux <span className="text-primary font-bold">questions</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Trouvez rapidement des réponses à vos questions

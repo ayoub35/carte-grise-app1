@@ -64,7 +64,7 @@ export function Header() {
 
   return (
     <header className="sticky top-10 z-50 w-full glass border-b-0 shadow-sm transition-all duration-300">
-      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+      <div className="h-[1px] w-full bg-border" />
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-6">

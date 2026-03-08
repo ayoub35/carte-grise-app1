@@ -72,7 +72,7 @@ export default function LeadsPage() {
   };
 
   return (
-    <div className="min-h-screen py-8 px-4 bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen py-8 px-4 bg-background">
       <div className="mx-auto max-w-6xl space-y-8">
         <div className="space-y-2">
           <h1 className="text-4xl font-semibold">Gestion des Leads</h1>

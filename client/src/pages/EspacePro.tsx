@@ -64,7 +64,7 @@ export default function EspacePro() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
           <div className="flex items-center gap-4">
@@ -149,7 +149,7 @@ export default function EspacePro() {
           </Card>
         </div>
 
-        <Card className="mb-8 border-primary/30 bg-gradient-to-r from-primary/5 to-primary/10">
+        <Card className="mb-8 border-primary/30 bg-muted">
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2 text-lg">
               <Gift className="w-5 h-5 text-primary" />

@@ -7,11 +7,7 @@ export default function Landing() {
   return (
     <div className="min-h-screen">
       {/* ═══ HERO SECTION ═══ */}
-      <section className="relative py-20 md:py-28 px-4 overflow-hidden">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-background to-primary/3 z-0" />
-        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary/3 rounded-full blur-3xl animate-float delay-700" />
+      <section className="relative py-20 md:py-28 px-4 overflow-hidden bg-background">
 
         <div className="relative z-10 mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -61,30 +57,16 @@ export default function Landing() {
 
             {/* Hero image - The "Star of the Show" */}
             <div className="flex justify-center lg:justify-end animate-fade-in-up delay-300 relative">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/30 via-indigo-500/20 to-gold/30 rounded-full blur-[80px] animate-glow-pulse opacity-70" />
-              
-              <div className="relative group w-full max-w-md perspective-1000">
-                {/* Decorative floating elements */}
-                <div className="absolute -left-8 top-10 w-24 h-24 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-xl animate-float delay-100 z-20 flex items-center justify-center rotate-[-12deg]">
-                  <FileText className="w-10 h-10 text-primary/80" />
-                </div>
-                <div className="absolute -right-4 bottom-10 w-20 h-20 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-xl animate-float delay-300 z-20 flex items-center justify-center rotate-[15deg]">
-                  <Shield className="w-8 h-8 text-emerald-500/80" />
-                </div>
-
+              <div className="relative group w-full max-w-md">
                 {/* Main Card */}
-                <div className="relative z-10 transition-all duration-700 ease-out group-hover:rotate-[-2deg] group-hover:scale-[1.03]">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary to-indigo-600 rounded-3xl transform rotate-3 scale-105 opacity-20 blur-xl transition-all duration-500 group-hover:opacity-40" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-white/5 border border-white/40 shadow-2xl rounded-3xl transform rotate-3 transition-transform duration-500 group-hover:rotate-1" />
-                  
-                  <div className="relative glass p-2 rounded-3xl shadow-2xl overflow-hidden border border-white/20 bg-white/5">
+                <div className="relative z-10 animate-spin-y">
+                  <div className="relative p-2 rounded-3xl overflow-hidden border border-border bg-card shadow-lg">
                     <img 
                       src={carteGriseImage} 
                       alt="Certificat d'immatriculation - Carte grise française" 
-                      className="rounded-2xl w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="rounded-2xl w-full object-cover"
                       data-testid="img-carte-grise-hero"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                 </div>
               </div>
@@ -136,9 +118,9 @@ export default function Landing() {
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
-                <Card key={idx} className={`card-premium border-transparent bg-card/80 backdrop-blur-sm animate-fade-in-up ${item.delay}`}>
+                <Card key={idx} className={`card-premium bg-card animate-fade-in-up ${item.delay}`}>
                   <CardHeader>
-                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
+                    <div className="h-12 w-12 rounded-xl bg-muted flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <CardTitle className="text-xl">{item.title}</CardTitle>
@@ -303,14 +285,14 @@ export default function Landing() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Particuliers */}
-            <Card className="card-premium relative overflow-hidden border-primary/30 h-full flex flex-col animate-fade-in-up delay-100">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 via-primary to-primary/50" />
+            <Card className="card-premium relative overflow-hidden h-full flex flex-col animate-fade-in-up delay-100">
+              <div className="absolute top-0 left-0 w-full h-1 bg-primary" />
               <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl">Particuliers</CardTitle>
                 <div className="mt-4">
                   <span className="text-muted-foreground text-sm">À partir de</span>
                   <div>
-                    <span className="text-5xl font-bold gradient-text">14.90€</span>
+                    <span className="text-5xl font-bold text-foreground">14.90€</span>
                   </div>
                 </div>
               </CardHeader>
@@ -336,16 +318,16 @@ export default function Landing() {
             </Card>
 
             {/* Professionnels */}
-            <Card className="card-premium relative overflow-hidden border-primary/30 h-full flex flex-col animate-fade-in-up delay-200">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400" />
-              <div className="absolute top-3 right-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+            <Card className="card-premium relative overflow-hidden h-full flex flex-col animate-fade-in-up delay-200">
+              <div className="absolute top-0 left-0 w-full h-1 bg-amber-500" />
+              <div className="absolute top-3 right-3 bg-amber-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
                 Jusqu'à -25%
               </div>
               <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl">Professionnels</CardTitle>
                 <p className="text-sm text-muted-foreground mt-2">Garages, concessionnaires & loueurs</p>
                 <div className="mt-4">
-                  <span className="text-5xl font-bold gradient-text">-25%</span>
+                  <span className="text-5xl font-bold text-amber-500">-25%</span>
                 </div>
               </CardHeader>
               <CardContent className="flex flex-col flex-1">
@@ -376,10 +358,7 @@ export default function Landing() {
       <div className="section-gradient-border" />
 
       {/* ═══ FINAL CTA ═══ */}
-      <section className="py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-primary/4 to-background z-0" />
-        <div className="absolute top-10 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl" />
+      <section className="py-20 px-4 relative overflow-hidden bg-muted/20">
         <div className="relative z-10 mx-auto max-w-4xl text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold animate-fade-in-up">
             Prêt à simplifier vos <span className="gradient-text">démarches</span> ?

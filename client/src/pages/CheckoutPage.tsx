@@ -239,7 +239,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="min-h-screen py-8 px-4 bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen py-8 px-4 bg-background">
       <div className="mx-auto max-w-4xl space-y-8">
         {/* Header */}
         <div className="space-y-2">

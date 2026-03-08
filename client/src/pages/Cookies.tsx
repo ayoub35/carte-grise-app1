@@ -7,7 +7,7 @@ export default function Cookies() {
   const { preferences, updatePreferences, resetToDefaults } = useCookiePreferences();
 
   return (
-    <div className="min-h-screen py-12 px-4 bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen py-12 px-4 bg-background">
       <div className="mx-auto max-w-4xl space-y-8">
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-bold">Politique Cookies</h1>

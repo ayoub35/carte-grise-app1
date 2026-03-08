@@ -2,9 +2,9 @@ import { Link } from "wouter";
 
 export default function Footer() {
   return (
-    <footer className="relative border-t-0 bg-gradient-to-b from-muted/30 to-muted/60 dark:from-card dark:to-background">
+    <footer className="relative border-t-0 bg-muted/10">
       {/* Gradient top border */}
-      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+      <div className="h-[2px] w-full bg-border" />
 
       <div className="mx-auto max-w-7xl px-4 py-14 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">

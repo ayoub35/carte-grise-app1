@@ -5,10 +5,10 @@ import partnersImage from "@assets/generated_images/modern_automotive_services_c
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <div className="py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-background to-primary/3" />
+        <div className="absolute inset-0 bg-background" />
         <div className="absolute top-10 right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
         <div className="relative mx-auto max-w-6xl animate-fade-in-up">
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">À propos de <span className="gradient-text">AutoDossiers</span></h1>
@@ -179,7 +179,7 @@ export default function About() {
 
         {/* CTA Section */}
         <section className="relative overflow-hidden rounded-2xl p-12 text-center space-y-6 animate-fade-in-up">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-background" />
+          <div className="absolute inset-0 bg-background" />
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold">Prêt à simplifier votre <span className="gradient-text">démarche</span> ?</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">

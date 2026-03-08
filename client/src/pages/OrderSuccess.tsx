@@ -70,7 +70,7 @@ export default function OrderSuccess() {
   }
 
   return (
-    <div className="min-h-screen py-12 px-4 bg-gradient-to-b from-background to-muted/30">
+    <div className="min-h-screen py-12 px-4 bg-background">
       <div className="mx-auto max-w-2xl space-y-8">
         <div className="text-center space-y-4">
           <div className={`mx-auto w-16 h-16 rounded-full flex items-center justify-center ${
