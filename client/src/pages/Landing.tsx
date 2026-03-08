@@ -41,12 +41,12 @@ export default function Landing() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center animate-fade-in-up delay-300">
-                <Button size="lg" variant="outline" asChild className="gap-2 min-w-[180px] group transition-all duration-300 hover:shadow-md" data-testid="button-cta-particulier">
+                <Button size="lg" variant="outline" asChild className="rounded-full gap-2 min-w-[180px] group transition-all duration-300 hover:shadow-md" data-testid="button-cta-particulier">
                   <a href="/demarches">
                     Voir les démarches
                   </a>
                 </Button>
-                <Button size="lg" asChild className="gap-2 min-w-[200px] btn-gradient" data-testid="button-cta-commander">
+                <Button size="lg" asChild className="rounded-full gap-2 min-w-[200px] btn-gradient" data-testid="button-cta-commander">
                   <a href="/demarches">
                     Commander carte grise
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -59,17 +59,34 @@ export default function Landing() {
               </p>
             </div>
 
-            {/* Hero image */}
-            <div className="flex justify-center lg:justify-end animate-fade-in-up delay-300">
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-br from-primary/30 to-primary/10 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500 opacity-60 group-hover:opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl transform rotate-3 transition-transform duration-500 group-hover:rotate-1" />
-                <img
-                  src={carteGriseImage}
-                  alt="Certificat d'immatriculation - Carte grise française"
-                  className="relative rounded-2xl shadow-2xl max-w-md w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  data-testid="img-carte-grise-hero"
-                />
+            {/* Hero image - The "Star of the Show" */}
+            <div className="flex justify-center lg:justify-end animate-fade-in-up delay-300 relative">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/30 via-indigo-500/20 to-gold/30 rounded-full blur-[80px] animate-glow-pulse opacity-70" />
+              
+              <div className="relative group w-full max-w-md perspective-1000">
+                {/* Decorative floating elements */}
+                <div className="absolute -left-8 top-10 w-24 h-24 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-xl animate-float delay-100 z-20 flex items-center justify-center rotate-[-12deg]">
+                  <FileText className="w-10 h-10 text-primary/80" />
+                </div>
+                <div className="absolute -right-4 bottom-10 w-20 h-20 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full shadow-xl animate-float delay-300 z-20 flex items-center justify-center rotate-[15deg]">
+                  <Shield className="w-8 h-8 text-emerald-500/80" />
+                </div>
+
+                {/* Main Card */}
+                <div className="relative z-10 transition-all duration-700 ease-out group-hover:rotate-[-2deg] group-hover:scale-[1.03]">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary to-indigo-600 rounded-3xl transform rotate-3 scale-105 opacity-20 blur-xl transition-all duration-500 group-hover:opacity-40" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-white/5 border border-white/40 shadow-2xl rounded-3xl transform rotate-3 transition-transform duration-500 group-hover:rotate-1" />
+                  
+                  <div className="relative glass p-2 rounded-3xl shadow-2xl overflow-hidden border border-white/20 bg-white/5">
+                    <img 
+                      src={carteGriseImage} 
+                      alt="Certificat d'immatriculation - Carte grise française" 
+                      className="rounded-2xl w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      data-testid="img-carte-grise-hero"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -312,7 +329,7 @@ export default function Landing() {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full mt-6 btn-gradient" asChild data-testid="button-individual-cta">
+                <Button className="w-full mt-6 rounded-full btn-gradient" asChild data-testid="button-individual-cta">
                   <a href="/register">S'inscrire en tant que particulier</a>
                 </Button>
               </CardContent>
@@ -346,7 +363,7 @@ export default function Landing() {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full mt-6 btn-gradient" asChild data-testid="button-professional-cta">
+                <Button className="w-full mt-6 rounded-full btn-gradient" asChild data-testid="button-professional-cta">
                   <a href="/register-pro">S'inscrire en tant que pro</a>
                 </Button>
               </CardContent>
@@ -371,13 +388,13 @@ export default function Landing() {
             Rejoignez des centaines de particuliers et professionnels qui nous font confiance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-200">
-            <Button size="lg" asChild className="gap-2 btn-gradient" data-testid="button-footer-particulier">
+            <Button size="lg" asChild className="rounded-full gap-2 btn-gradient" data-testid="button-footer-particulier">
               <a href="/register">
                 Particulier
                 <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild className="gap-2 transition-all duration-300 hover:shadow-md" data-testid="button-footer-pro">
+            <Button size="lg" variant="outline" asChild className="rounded-full gap-2 transition-all duration-300 hover:shadow-md" data-testid="button-footer-pro">
               <a href="/register-pro">
                 Professionnel (jusqu'à -25%)
                 <ArrowRight className="h-4 w-4" />

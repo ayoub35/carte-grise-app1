@@ -90,7 +90,10 @@ function App() {
         <div className="fixed top-0 left-0 w-full z-[100] bg-[#F59E0B] text-black text-center text-sm font-semibold py-2 px-4 shadow-md">
           🔒 DEMO MODE — Portfolio demonstration only. No real documents are processed or stored.
         </div>
-        <div className="flex flex-col min-h-screen bg-background pt-10">
+        <div className="flex flex-col min-h-screen bg-background pt-10 relative">
+          {/* Subtle noise texture overlay */}
+          <div className="pointer-events-none fixed inset-0 z-50 h-full w-full opacity-[0.03] mix-blend-overlay" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
+          
           <Header />
           <main className="flex-1">
             <Router />

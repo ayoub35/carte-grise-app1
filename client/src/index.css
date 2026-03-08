@@ -45,10 +45,11 @@
   --chart-3: 271 81% 56%;
   --chart-4: 38 92% 50%;
   --chart-5: 340 82% 52%;
-  --font-sans: Inter, system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Barlow Semi Condensed', sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: 'JetBrains Mono', Menlo, monospace;
-  --radius: .625rem;
+  --radius: 1rem;
   /* Premium shadows with blue tint */
   --shadow-2xs: 0 1px 2px 0 rgba(15,23,42,.04);
   --shadow-xs: 0 1px 3px 0 rgba(15,23,42,.06), 0 1px 2px -1px rgba(15,23,42,.06);
@@ -145,7 +146,23 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-background text-foreground/90; /* 87% approx */
+  }
+  
+  h1, .h1 {
+    @apply font-heading font-bold text-foreground opacity-100 uppercase tracking-tight;
+  }
+  
+  h2, .h2 {
+    @apply font-heading font-bold text-foreground/90 tracking-tight;
+  }
+  
+  h3, h4, .h3, .h4 {
+    @apply font-heading font-semibold text-foreground/75 tracking-tight;
+  }
+  
+  .text-secondary {
+    @apply text-foreground/60;
   }
 
   /* Smooth scrolling */
