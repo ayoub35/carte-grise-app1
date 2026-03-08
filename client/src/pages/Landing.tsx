@@ -59,7 +59,7 @@ export default function Landing() {
             <div className="flex justify-center lg:justify-end animate-fade-in-up delay-300 relative">
               <div className="relative group w-full max-w-md">
                 {/* Main Card */}
-                <div className="relative z-10 animate-spin-y">
+                <div className="relative z-10 hover-animate-spin-y cursor-pointer">
                   <div className="relative p-2 rounded-3xl overflow-hidden border border-border bg-card shadow-lg">
                     <img 
                       src={carteGriseImage} 

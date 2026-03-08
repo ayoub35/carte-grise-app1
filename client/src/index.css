@@ -333,6 +333,15 @@
     animation: spin-y 15s linear infinite;
     transform-style: preserve-3d;
   }
+  
+  .hover-animate-spin-y {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-out;
+  }
+  
+  .group:hover .hover-animate-spin-y {
+    animation: spin-y 15s linear infinite;
+  }
 
   .animate-shimmer {
     background: linear-gradient(
